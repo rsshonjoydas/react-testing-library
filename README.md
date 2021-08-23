@@ -13,6 +13,7 @@
 - [Types of Testing](#types-of-testing)
 - [How to test](#how-to-test)
 - [Query Methods](#query-methods)
+- [Priority of getBy](#priority-of-getby)
 
 ### What is Web Testing?
 
@@ -51,6 +52,15 @@ During this stage issues such as that of web application security, the functioni
 | 1 Match  | return  | return | return  | array    | array     | array      |
 | 1+ Match | error   | error  | error   | array    | array     | array      |
 | Await    | no      | yes    | no      | no       | yes       | no         |
+
+### Priority of getBy
+
+|Accessible by Everyone|Semantic Queries| Test ID     |
+|----------------------|----------------|-------------|
+| getByRole            | getByAltText   | getByTextId |
+| getByLabelText       | getByTitle     |
+| getByPlaceholderText |
+| getByText            |
 
 <!-- MARKDOWN LINKS & IMAGES -->
 
