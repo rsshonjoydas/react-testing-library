@@ -14,3 +14,10 @@ test('render incomplete tasks', () => {
   const paragraphElement = screen.getByText(/5 tasks left/i);
   expect(paragraphElement).toBeInTheDocument();
 });
+
+// ? incomplete single task
+test('render incomplete single task', () => {
+  render(<MockTodoFooter numberOfIncompleteTasks={1} />);
+  const paragraphElement = screen.getByText(/1 task left/i);
+  expect(paragraphElement).toBeInTheDocument();
+});
