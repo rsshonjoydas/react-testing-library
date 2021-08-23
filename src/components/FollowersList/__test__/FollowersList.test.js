@@ -13,6 +13,10 @@ describe('FollowersList', () => {
     console.log('Running before each test');
   });
 
+  beforeAll(() => {
+    console.log('Running before all tests');
+  });
+
   test('render header props', async () => {
     render(<MockFollowersList />);
     const followerDivElement = await screen.findByTestId('follower-item-0');
