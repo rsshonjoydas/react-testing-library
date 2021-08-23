@@ -31,4 +31,11 @@ describe('Todo', () => {
     const divElements = screen.getAllByTestId('task-container');
     expect(divElements.length).toBe(2);
   });
+
+  test('tasks should have not completed class when clicked', () => {
+    render(<MockTodo />);
+    addTask(['Go Grocery Shopping']);
+    const divElement = screen.getByText(/Go Grocery Shopping/i);
+    expect(divElement).not.toHaveClass('todo-item-active');
+  });
 });
