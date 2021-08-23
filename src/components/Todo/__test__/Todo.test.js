@@ -24,4 +24,11 @@ describe('Todo', () => {
     const divElement = screen.getByText(/Go Grocery Shopping/i);
     expect(divElement).not.toHaveClass('todo-item-active');
   });
+
+  test('should render multiple items', () => {
+    render(<MockTodo />);
+    addTask(['Go Grocery Shopping', 'Pet my Cat']);
+    const divElements = screen.getAllByTestId('task-container');
+    expect(divElements.length).toBe(2);
+  });
 });
