@@ -46,3 +46,12 @@ test('render header props', async () => {
   const headingElement = await screen.findByText(/my header/i);
   expect(headingElement).toBeInTheDocument();
 });
+
+// ! queryBy
+
+// ? queryByText
+test('render header props', () => {
+  render(<Header title="My Header" />);
+  const headingElement = screen.queryByText(/dogs/i);
+  expect(headingElement).not.toBeInTheDocument();
+});
