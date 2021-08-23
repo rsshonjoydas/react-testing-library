@@ -8,18 +8,20 @@ const MockTodoFooter = ({ numberOfIncompleteTasks }) => (
   </BrowserRouter>
 );
 
-// ? incomplete multiple tasks
-test('render incomplete tasks', () => {
-  render(<MockTodoFooter numberOfIncompleteTasks={5} />);
-  const paragraphElement = screen.getByText(/5 tasks left/i);
-  expect(paragraphElement).toBeInTheDocument();
-});
+describe('TodoFooter', () => {
+  // ? incomplete multiple tasks
+  test('render incomplete tasks', () => {
+    render(<MockTodoFooter numberOfIncompleteTasks={5} />);
+    const paragraphElement = screen.getByText(/5 tasks left/i);
+    expect(paragraphElement).toBeInTheDocument();
+  });
 
-// ? incomplete single task
-test('render incomplete single task', () => {
-  render(<MockTodoFooter numberOfIncompleteTasks={1} />);
-  const paragraphElement = screen.getByText(/1 task left/i);
-  expect(paragraphElement).toBeInTheDocument();
+  // ? incomplete single task
+  test('render incomplete single task', () => {
+    render(<MockTodoFooter numberOfIncompleteTasks={1} />);
+    const paragraphElement = screen.getByText(/1 task left/i);
+    expect(paragraphElement).toBeInTheDocument();
+  });
 });
 
 // ? toBeTruthy
