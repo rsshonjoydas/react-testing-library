@@ -1,3 +1,4 @@
+/* eslint-disable react/no-array-index-key */
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
@@ -18,8 +19,8 @@ export default function FollowersList() {
   return (
     <div className="followerslist-container">
       <div>
-        {followers.map((follower) => (
-          <div className="follower-item">
+        {followers.map((follower, index) => (
+          <div className="follower-item" key={index} data-testid={`follower-item-${index}`}>
             <img src={follower.picture.large} alt="follower img" />
             <div className="followers-details">
               <div className="follower-item-name">
