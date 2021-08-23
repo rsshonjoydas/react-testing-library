@@ -30,3 +30,9 @@ test('render header props', () => {
   const headingElement = screen.getByTestId('header-1');
   expect(headingElement).toBeInTheDocument();
 });
+
+test('render header props', async () => {
+  render(<Header title="My Header" />);
+  const headingElement = await screen.findByText(/my header/i);
+  expect(headingElement).toBeInTheDocument();
+});
