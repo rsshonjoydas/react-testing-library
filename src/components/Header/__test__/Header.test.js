@@ -6,3 +6,9 @@ test('render header props', () => {
   const headingElement = screen.getByText(/my header/i);
   expect(headingElement).toBeInTheDocument();
 });
+
+test('render header props', () => {
+  render(<Header title="My Header" />);
+  const headingElement = screen.getByRole('heading');
+  expect(headingElement).toBeInTheDocument();
+});
