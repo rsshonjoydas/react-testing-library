@@ -9,6 +9,16 @@ const MockFollowersList = () => (
 );
 
 describe('FollowersList', () => {
+  beforeEach(() => {
+    console.log('Running before each test');
+  });
+
+  test('render header props', async () => {
+    render(<MockFollowersList />);
+    const followerDivElement = await screen.findByTestId('follower-item-0');
+    expect(followerDivElement).toBeInTheDocument();
+  });
+
   test('render header props', async () => {
     render(<MockFollowersList />);
     const followerDivElement = await screen.findByTestId('follower-item-0');
