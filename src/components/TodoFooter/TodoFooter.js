@@ -5,7 +5,7 @@ import './TodoFooter.css';
 function TodoFooter({ numberOfIncompleteTasks }) {
   return (
     <div className="todo-footer">
-      <p>
+      <p data-testid="para">
         {numberOfIncompleteTasks} {numberOfIncompleteTasks === 1 ? 'task' : 'tasks'} left
       </p>
       <Link to="/followers">Followers</Link>

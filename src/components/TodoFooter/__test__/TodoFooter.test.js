@@ -49,3 +49,10 @@ test('render incomplete single task', () => {
   const paragraphElement = screen.getByText(/1 task left/i);
   expect(paragraphElement).toHaveTextContent('1 task left');
 });
+
+// ? tHaveTextContent with getByTestId
+test('render incomplete single task', () => {
+  render(<MockTodoFooter numberOfIncompleteTasks={1} />);
+  const paragraphElement = screen.getByTestId('para');
+  expect(paragraphElement).toHaveTextContent('1 task left');
+});
