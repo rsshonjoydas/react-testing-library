@@ -12,6 +12,7 @@
 - [What is web Testing](#what-is-web-testing)
 - [Types of Testing](#types-of-testing)
 - [How to test](#how-to-test)
+- [Query Methods](#query-methods)
 
 ### What is Web Testing?
 
@@ -41,6 +42,15 @@ During this stage issues such as that of web application security, the functioni
   - simulates the browser activity (Puppeteer)
 
 ##### Mocha + Chai = Jest
+
+### Query Methods
+
+|          | getBy   | findBy | queryBy | getAllBy | findAllBy | queryAllBy |
+| ---------| --------|--------|---------|----------|-----------|------------|
+| No Match | error   | error  | null    | error    | error     | array      |
+| 1 Match  | return  | return | return  | array    | array     | array      |
+| 1+ Match | error   | error  | error   | array    | array     | array      |
+| Await    | no      | yes    | no      | no       | yes       | no         |
 
 <!-- MARKDOWN LINKS & IMAGES -->
 
