@@ -24,6 +24,13 @@ test('render header props', () => {
   expect(headingElement).toBeInTheDocument();
 });
 
+// ? getAllByRole multiple heading with length
+test('render header props', () => {
+  render(<Header title="My Header" />);
+  const headingElements = screen.getAllByRole('heading');
+  expect(headingElements.length).toBe(2);
+});
+
 // ? getByTitle
 test('render header props', () => {
   render(<Header title="My Header" />);
