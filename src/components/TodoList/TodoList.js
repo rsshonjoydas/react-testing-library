@@ -1,3 +1,4 @@
+/* eslint-disable react/no-array-index-key */
 import React from 'react';
 import TodoFooter from '../TodoFooter/TodoFooter';
 import './TodoList.css';
@@ -26,10 +27,11 @@ function TodoList({ todos, setTodos }) {
     <div className="todolist-container">
       <div className="todos-container">
         <div>
-          {todos.map((todo) => (
+          {todos.map((todo, index) => (
             <div
               className={`todo-item ${todo.completed && 'todo-item-active'}`}
               onClick={() => updateTask(todo.id)}
+              key={index}
             >
               {todo.task}
             </div>
