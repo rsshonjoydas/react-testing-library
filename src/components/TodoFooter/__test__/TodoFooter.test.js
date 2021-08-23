@@ -35,3 +35,10 @@ test('render incomplete single task', () => {
   const paragraphElement = screen.getByText(/1 task left/i);
   expect(paragraphElement).toBeVisible();
 });
+
+// ? toContainHTML
+test('render incomplete single task', () => {
+  render(<MockTodoFooter numberOfIncompleteTasks={1} />);
+  const paragraphElement = screen.getByText(/1 task left/i);
+  expect(paragraphElement).toContainHTML('p');
+});
