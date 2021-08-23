@@ -38,4 +38,12 @@ describe('Todo', () => {
     const divElement = screen.getByText(/Go Grocery Shopping/i);
     expect(divElement).not.toHaveClass('todo-item-active');
   });
+
+  test('tasks should have completed class when clicked', () => {
+    render(<MockTodo />);
+    addTask(['Go Grocery Shopping']);
+    const divElement = screen.getByText(/Go Grocery Shopping/i);
+    fireEvent.click(divElement);
+    expect(divElement).toHaveClass('todo-item-active');
+  });
 });
